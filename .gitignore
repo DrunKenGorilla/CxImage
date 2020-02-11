@@ -1,0 +1,6 @@
+.vs/*
+*.vcproj.*
+*.vcxproj.*
+*.ncb
+*.suo
+*.aps
