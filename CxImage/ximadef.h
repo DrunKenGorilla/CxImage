@@ -93,7 +93,16 @@ typedef struct tagcomplex {
 #endif
 
 #if defined(WIN32) || defined(_WIN32_WCE)
+#if 1
+#if _MSC_VER >= 1600
+#include <stdint.h>
+#else
+#include "stdint.h"
+#endif
+#else
+// original
  #include "stdint.h"
+#endif
 #endif
 
 #if !defined(WIN32) && !defined(_WIN32_WCE)
