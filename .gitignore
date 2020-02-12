@@ -1,4 +1,6 @@
 .vs/*
+*/Debug/*
+*/Release/*
 *.vcproj.*
 *.vcxproj.*
 *.ncb
