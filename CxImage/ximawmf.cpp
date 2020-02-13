@@ -108,11 +108,15 @@ bool CxImageWMF::Decode(CxFile *hFile, int32_t nForceWidth, int32_t nForceHeight
 			strcpy(info.szLastError,"corrupted WMF");
 			return false; // definitively give up
 		}
-
+#if 1
+		// Fixed getting wrong value for EMF canvas size
+		cx = emh.rclFrame.right - emh.rclFrame.left;
+		cy = emh.rclFrame.bottom - emh.rclFrame.top;
+#else
 		// ok, it's an EMF; calculate canvas size
 		cx = emh.rclBounds.right - emh.rclBounds.left;
 		cy = emh.rclBounds.bottom - emh.rclBounds.top;
-
+#endif
 		// alternative methods, sometime not so reliable... [DP]
 		//cx = emh.szlDevice.cx;
 		//cy = emh.szlDevice.cy;
