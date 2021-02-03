@@ -1,4 +1,4 @@
-// xImaWnd.cpp : Windows functions
+﻿// xImaWnd.cpp : Windows functions
 /* 07/08/2001 v1.00 - Davide Pizzolato - www.xdp.it
  * CxImage version 7.0.2 07/Feb/2011
  */
@@ -230,7 +230,7 @@ bool CxImage::CreateFromHANDLE(HANDLE hMem)
 		SetYDPI((int32_t)floor(head.biYPelsPerMeter * 254.0 / 10000.0 + 0.5));
 
 		/*//copy the pixels (old way)
-		if((pHead->biCompression != BI_RGB) || (pHead->biBitCount == 32)){ //<J�rgen Alfredsson>
+		if((pHead->biCompression != BI_RGB) || (pHead->biBitCount == 32)){ //<Jörgen Alfredsson>
 			// BITFIELD case
 			// set the internal header in the dib
 			memcpy(pDib,&head,sizeof(head));
