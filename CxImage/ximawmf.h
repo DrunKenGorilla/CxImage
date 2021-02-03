@@ -145,8 +145,8 @@ protected:
 //#define	XMF_MAXSIZE_CY	(GetSystemMetrics(SM_CYSCREEN)-50)
 //#define	XMF_MAXSIZE_CX	(2*GetSystemMetrics(SM_CXSCREEN)/3)
 //#define	XMF_MAXSIZE_CY	(2*GetSystemMetrics(SM_CYSCREEN)/3)
-#define	XMF_MAXSIZE_CX	4000
-#define	XMF_MAXSIZE_CY	4000
+#define	XMF_MAXSIZE_CX	10000
+#define	XMF_MAXSIZE_CY	10000
 
 
 #endif
