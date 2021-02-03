@@ -109,9 +109,16 @@ bool CxImageWMF::Decode(CxFile *hFile, int32_t nForceWidth, int32_t nForceHeight
 			return false; // definitively give up
 		}
 #if 1
-		// Fixed getting wrong value for EMF canvas size
-		cx = emh.rclFrame.right - emh.rclFrame.left;
-		cy = emh.rclFrame.bottom - emh.rclFrame.top;
+		int nCanvasWidth = emh.rclFrame.right - emh.rclFrame.left;
+		int nCanvasHeight = emh.rclFrame.bottom - emh.rclFrame.top;
+		int nWidthMM = emh.szlMillimeters.cx;
+		int nHeightMM = emh.szlMillimeters.cy;
+		int nWidthPels = emh.szlDevice.cx;
+		int nHeightPels = emh.szlDevice.cy;
+
+		// calcuate client canvas size
+		cx = MulDiv(nCanvasWidth, nWidthPels, nWidthMM * 100);
+		cy = MulDiv(nCanvasHeight, nHeightPels, nHeightMM * 100);
 #else
 		// ok, it's an EMF; calculate canvas size
 		cx = emh.rclBounds.right - emh.rclBounds.left;
